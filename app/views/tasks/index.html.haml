@@ -10,7 +10,7 @@
    .description{:style=>"float: left; width: 80%; position: relative; top: .5em"}
     = task.description
    .length{:style=>"z-index: 1001; width: 20%; position: absolute; right: 0; text-align: right; padding: .5em .5em .45em 0"}
-    = task.length ||= 0
+    #{task.length ||= 0}m
 .bar{:style=>"display:none; width: 100%;background-color:#CCCCCC;height:2em;"}
 %div{:style=>"display:none"}
 :javascript
@@ -21,17 +21,15 @@
 
  function ticker(){
   var now = new Date();
-  var days = 0;
-  var hours = 0;
-  var minutes = 0;
-  var seconds = 0;
   var msecs = endTime - now.getTime();
+  var minutes = Math.ceil(msecs / 1000 / 60);
+  var seconds = Math.ceil(msecs / 1000) % 60;
   if(msecs <= 0){
    msecs = 0;
    window.clearTimeout(timer);
    timerDisplay.text();
   } else {
-   timerDisplay.text(days + "D " + hours + "H " + minutes + "m " + seconds + "s");
+   timerDisplay.text(minutes + "m " + seconds + "s");
    timer = window.setTimeout(ticker,1000);
   }
  }
