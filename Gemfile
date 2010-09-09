@@ -1,0 +1,11 @@
+source :gemcutter
+gem "rails", "2.3.8"
+gem "authlogic"
+gem "declarative_authorization"
+gem "paperclip"
+gem "haml"
+gem "cucumber"
+gem "cucumber-rails"
+gem "rspec"
+gem "test-unit", "1.2.3"
+gem "forgery"

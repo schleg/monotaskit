@@ -1,0 +1,29 @@
+%dl
+ %dt
+  = form.label :email, "E-mail"
+ %dd
+  = form.text_field :email
+ %dt
+  = form.label :login, 'User Name'
+ %dd
+  - if @is_admin
+   = @user.login
+   = form.hidden_field :login
+  - else
+   = form.text_field :login
+ %dt
+  = form.label :password, form.object.new_record? ? nil : "Change Password"
+ %dd
+  = form.password_field :password
+ %dt
+  = form.label :password_confirmation, "Password Confirmation"
+ %dd
+  = form.password_field :password_confirmation
+- has_role?(:administrator) do
+ %h3
+  = form.label :roles
+ %ul
+  - for role in Role.find(:all)
+   %li
+    = check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role), :id => "user_role_ids_" + role.id.to_s
+    = label_tag "user_role_ids_" + role.id.to_s, role.title

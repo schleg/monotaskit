@@ -1,0 +1,11 @@
+.form_wrapper
+ - if current_user
+  %h2
+   New User
+ - else
+  %h2
+   Register Account
+ - form_for @user, :url => account_path do |f|
+  = f.error_messages
+  = render :partial => "form", :object => f
+  = f.submit "Register"

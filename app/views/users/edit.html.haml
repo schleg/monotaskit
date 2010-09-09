@@ -1,0 +1,14 @@
+.form_wrapper
+ - if current_user.id == @user.id
+  %h2
+   Edit My Account
+ - else
+  %h2
+   Edit User
+ - form_for @user, :url => get_update_url(@user) do |f|
+  = f.error_messages
+  = render :partial => "form", :object => f
+  = f.submit "Update"
+  - if @user.login != "administrator"
+   - has_role?(:administrator) do
+    = link_to "Delete", delete_user_path(@user), :class => "delete"

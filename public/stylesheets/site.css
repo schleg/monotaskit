@@ -1,0 +1,129 @@
+body {
+	margin: 0;
+	font-size: 90%;
+	font-family: sans-serif;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	color: #66CCFF;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 150%;
+	line-height: 2em;
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 120%;
+	clear: both;
+	line-height: 2em;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 110%;
+	line-height: 2em;
+}
+dt, dd {
+	margin: 0;
+	padding: 0;
+	line-height: 2em;
+}
+ul, dl {
+	margin: 0;
+	padding: 0 0 .5em 0;
+}
+li {
+	margin: 0 0 0 2em;
+	padding: .25em 0 0 0;
+}
+input {
+	font-size: 100%;
+}
+.notice {
+	color: #006600;
+	background-color: #ccffcc;
+	border: 1px solid #006600;
+	padding: .5em 0 .5em 1em;
+	vertical-align: middle;
+	white-space: nowrap;
+	line-height: 2em;
+}
+.error {
+	color: #660000;
+	background-color: #ffcccc;
+	border: 1px solid #660000;
+	padding: 1em;
+	margin: 0 0 1em 0;
+}
+.errorExplanation {
+	color: #660000;
+}
+.errorExplanation p {
+	margin: 0;
+	padding: 0;
+}
+.fieldWithErrors input {
+	border: solid 2px #660000;
+}
+.flashes {
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+.header {
+	float: left;
+	width: 50%;
+	padding: 0 0 0 1em;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.user_info {
+	float: left;
+	position: absolute;
+	right: 0;
+	width: 50%;
+	padding: .5em .5em 0 0;
+	white-space: nowrap;
+	text-align: right;
+	line-height: 2em;
+}
+.task_actions {
+	clear: both;
+	line-height: 2em;
+	font-size: 150%;
+	border-bottom: 1px solid #CCCCCC;
+	padding: 0 0 0 .5em;
+}
+.task {
+	clear: both;
+	height: 2em;
+	font-size: 150%;
+	border-bottom: solid 1px #CCCCCC;
+	white-space: nowrap;
+}
+.task:hover {
+	font-weight: bold;
+}
+.form_wrapper {
+	padding: .5em 0 0 1em;
+}
+#task_submit {
+	background-color: #107fc9;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	border: 2px solid #0c5f97;
+}
+.task_list li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}

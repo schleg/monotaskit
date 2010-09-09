@@ -1,0 +1,55 @@
+.task_actions
+ =# link_to '+', new_task_path, :class => 'new_task_link'
+ %a#new_task_link{:href=>"tasks/new#new_task_inline"}
+  +
+%ul.task_list
+ - @tasks.each do |task|
+  %li.task
+   .control{:style=>"float: left; position: relative; top: .5em; padding: 0 .5em 0 .5em"}
+    %a{:href=>"#",:class=>"start_button"} Start
+   .description{:style=>"float: left; width: 80%; position: relative; top: .5em"}
+    = task.description
+   .length{:style=>"z-index: 1001; width: 20%; position: absolute; right: 0; text-align: right; padding: .5em .5em .45em 0"}
+    = task.length ||= 0
+.bar{:style=>"display:none; width: 100%;background-color:#CCCCCC;height:2em;"}
+%div{:style=>"display:none"}
+:javascript
+
+ var endTime = null;
+ var timerDisplay = null;
+ var timer = null;
+
+ function ticker(){
+  var now = new Date();
+  var days = 0;
+  var hours = 0;
+  var minutes = 0;
+  var seconds = 0;
+  var msecs = endTime - now.getTime();
+  if(msecs <= 0){
+   msecs = 0;
+   window.clearTimeout(timer);
+   timerDisplay.text();
+  } else {
+   timerDisplay.text(days + "D " + hours + "H " + minutes + "m " + seconds + "s");
+   timer = window.setTimeout(ticker,1000);
+  }
+ }
+
+ function startTimer(taskElement){
+  var bar = $('.bar');
+  bar.css("display","block");
+  taskElement.append(bar);
+  timerDisplay = taskElement.children(".length");
+  timerDisplay.css("background-color","#CCCCCC");
+  var startTime = new Date();
+  var length = parseInt(timerDisplay.text());
+  endTime = new Date(startTime.getTime() + (length * 1000 * 60));
+  timer = window.setTimeout(ticker,1000);
+ }
+
+ $(document).ready(function(){
+  $(".start_button").click(function(){
+   startTimer($(this).parent().parent());
+  });
+ });

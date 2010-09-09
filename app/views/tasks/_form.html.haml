@@ -1,0 +1,16 @@
+- form_for @task, :html => { :id => "task_form" } do |f|
+ = f.error_messages
+ %dl
+  %dt
+   = f.label :description, "Task Description"
+  %dd
+   = f.text_field :description
+  %dt
+   = f.label :tag_list, "Tags"
+  %dd
+   = f.text_field :tag_list
+  %dt
+   = f.label :length, "Time"
+  %dd
+   = f.text_field :length
+ = f.submit "Save"

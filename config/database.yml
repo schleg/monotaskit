@@ -1,0 +1,23 @@
+login: &login
+  adapter: mysql
+  encoding: utf8
+  pool: 5
+  username: root
+  password: #"58>/0$-5GWy#76C"
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *login
+  database: monotaskit_development
+
+test: &test
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  <<: *login
+  database: monotaskit
+cucumber:
+  <<: *test

@@ -1,0 +1,7 @@
+%h2
+ Deleting User
+%p
+ Are you sure you want to delete #{@user.login} (#{@user.email})?
+- form_for @user, :html => { :method => 'delete' } do |f|
+ = submit_tag "Yes"
+ = submit_tag "No", :name => "cancel"
