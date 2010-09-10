@@ -17170,3 +17170,2329 @@ Rendering template within layouts/application
 Rendering tasks/new
 Rendered tasks/_form (5.0ms)
 Completed in 32ms (View: 8, DB: 4) | 200 OK [http://localhost/tasks/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100630161808)
+Migrating to CreateRoles (20100902011223)
+Migrating to CreateRolesUsers (20100902011438)
+Migrating to CreateTasks (20100906053933)
+Migrating to ActsAsTaggableMigration (20100906060533)
+Migrating to AddTimeToTasks (20100906060823)
+Migrating to AddStartedToTasks (20100909204733)
+  [4;36;1mSQL (65.7ms)[0m   [0;1mALTER TABLE `tasks` ADD `started` datetime[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100909204733')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (4.2ms)[0m   [0;1mdescribe `roles`[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mSHOW KEYS FROM `roles`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `roles_users`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mdescribe `tasks`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW KEYS FROM `tasks`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:25:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 6519ms (View: 1073, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:26:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (203.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'ed72c4fee33e1a5c89bb063f26d6b18e') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'g3ApSlL76gIgBFyBaC') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('g3ApSlL76gIgBFyBaC', '2010-09-10 01:26:33', '2010-09-10 01:26:33', '08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33bad8b6b9df21b49190214da1ff80e3244775fb797a59598283a766cb61d343a9fd025cbae0ff03', 'mNgQlbiWaBFpiU4Z4fO', '2010-09-10 01:26:33', 0, '127.0.0.1', 'OAGXMC9KMcoXQoxR0d', '2010-09-10 01:26:33', 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef', 1, NULL, 'ed72c4fee33e1a5c89bb063f26d6b18e', NULL, 'ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 28660ms (View: 2619, DB: 208) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:27:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (210.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:27:28', `perishable_token` = '5clE46lglfuKk0yDk6sD', `last_request_at` = '2010-09-10 01:27:28' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 13515ms (View: 3524, DB: 216) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:27:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (29.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:27:36', `perishable_token` = 'uvxPSGitOcENmXA1cPJD', `last_request_at` = '2010-09-10 01:27:36' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 25014ms (View: 23400, DB: 35) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:28:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (27.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.8ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:28:23', `perishable_token` = '7GF5CJdYLTkUloFtg7', `last_request_at` = '2010-09-10 01:28:23' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 172649ms (View: 170757, DB: 33) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:31:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:31:24', `perishable_token` = 'pvPqrmqanmR3gR7F46Pf', `last_request_at` = '2010-09-10 01:31:24' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 129649ms (View: 126209, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:33:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (20.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:34:15', `perishable_token` = '3CIgb5aZUaD8TFgqAJH', `last_request_at` = '2010-09-10 01:34:15' WHERE `id` = 3[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+
+ActionView::TemplateError (Attempt to call private method) on line #18 of app/views/layouts/application.html.haml:
+15:   %div.header
+16:    %h1
+17:     = link_to SITE_NAME, root_path, :class => "home_link"
+18:   - if current_user && !current_user.temp
+19:    .user_info
+20:     - if response.request.path == "/users/#{current_user.id}/edit"
+21:      = current_user.login
+
+    app/views/layouts/application.html.haml:18:in `_run_haml_app47views47layouts47application46html46haml'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (53.9ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:34:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:34:17', `perishable_token` = 'ojGQMsDimpQzwKK0N1uh', `last_request_at` = '2010-09-10 01:34:17' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+
+ActionView::TemplateError (Attempt to call private method) on line #18 of app/views/layouts/application.html.haml:
+15:   %div.header
+16:    %h1
+17:     = link_to SITE_NAME, root_path, :class => "home_link"
+18:   - if current_user && !current_user.temp
+19:    .user_info
+20:     - if response.request.path == "/users/#{current_user.id}/edit"
+21:      = current_user.login
+
+    app/views/layouts/application.html.haml:18:in `_run_haml_app47views47layouts47application46html46haml'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (146.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:34:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (28.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:34:54', `perishable_token` = 'buL6aN4hkIsnoVcmTfBL', `last_request_at` = '2010-09-10 01:34:54' WHERE `id` = 3[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+
+ActionView::TemplateError (Attempt to call private method) on line #18 of app/views/layouts/application.html.haml:
+15:   %div.header
+16:    %h1
+17:     = link_to SITE_NAME, root_path, :class => "home_link"
+18:   - if current_user && !current_user.temp
+19:    .user_info
+20:     - if response.request.path == "/users/#{current_user.id}/edit"
+21:      = current_user.login
+
+    app/views/layouts/application.html.haml:18:in `_run_haml_app47views47layouts47application46html46haml'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (144.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:35:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:35:22', `perishable_token` = 'fKafrEOE08pw0yOQNuz8', `last_request_at` = '2010-09-10 01:35:22' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 2560ms (View: 877, DB: 27) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:35:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (17.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:35:39', `perishable_token` = 'yjROwfTnKzsQn0xyK4Lo', `last_request_at` = '2010-09-10 01:35:39' WHERE `id` = 3[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 12193ms (DB: 22) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 18:35:40) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:35:40', `perishable_token` = 'V5XYDUTmA5GemLVDoHw', `last_request_at` = '2010-09-10 01:35:40' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Permission denied: No matching rules found for show for #<User id: 3, login: "ed72c4fee33e1a5c89bb063f26d6b18e", email: "ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com", crypted_password: "08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33b...", password_salt: "OAGXMC9KMcoXQoxR0d", persistence_token: "ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083...", single_access_token: "g3ApSlL76gIgBFyBaC", perishable_token: "V5XYDUTmA5GemLVDoHw", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 01:35:40", current_login_at: "2010-09-10 01:26:33", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 01:26:33", updated_at: "2010-09-10 01:35:40"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 1859ms (DB: 6) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:35:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (108.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:35:42', `perishable_token` = 'IQ1rlAAt26cDrNQq4AWk', `last_request_at` = '2010-09-10 01:35:42' WHERE `id` = 3[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 2596ms (View: 1942, DB: 112) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:35:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:35:58', `perishable_token` = 'LjNO3zvquFDlXPvdiu5m', `last_request_at` = '2010-09-10 01:35:58' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 118ms (View: 6, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:36:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (22.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:01', `perishable_token` = 'QNWVlj5E4Tl84oi8iyXq', `last_request_at` = '2010-09-10 01:36:01' WHERE `id` = 3[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 48ms (DB: 26) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 18:36:01) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:01', `perishable_token` = 'Fp4kDVSvTXjojmCSNsn', `last_request_at` = '2010-09-10 01:36:01' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Permission denied: No matching rules found for show for #<User id: 3, login: "ed72c4fee33e1a5c89bb063f26d6b18e", email: "ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com", crypted_password: "08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33b...", password_salt: "OAGXMC9KMcoXQoxR0d", persistence_token: "ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083...", single_access_token: "g3ApSlL76gIgBFyBaC", perishable_token: "Fp4kDVSvTXjojmCSNsn", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 01:36:01", current_login_at: "2010-09-10 01:26:33", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 01:26:33", updated_at: "2010-09-10 01:36:01"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 36ms (DB: 5) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:01', `perishable_token` = 'cwMrKpyAHRjBFzaDDCQg', `last_request_at` = '2010-09-10 01:36:01' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 121ms (View: 5, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-09 18:36:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (23.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:05', `perishable_token` = 'jNg2aBjwJ9Br0qEqASxD', `last_request_at` = '2010-09-10 01:36:05' WHERE `id` = 3[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.7ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.6ms)
+Completed in 81ms (View: 21, DB: 31) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:36:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (22.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.1ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:11', `perishable_token` = 'vHUCcRS0UmJI6awgNQcZ', `last_request_at` = '2010-09-10 01:36:11' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 49ms (DB: 27) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 18:36:11) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:12', `perishable_token` = 'E9U2w2hgWsf8Cc4p7HbL', `last_request_at` = '2010-09-10 01:36:12' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Permission denied: No matching rules found for show for #<User id: 3, login: "ed72c4fee33e1a5c89bb063f26d6b18e", email: "ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com", crypted_password: "08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33b...", password_salt: "OAGXMC9KMcoXQoxR0d", persistence_token: "ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083...", single_access_token: "g3ApSlL76gIgBFyBaC", perishable_token: "E9U2w2hgWsf8Cc4p7HbL", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 01:36:12", current_login_at: "2010-09-10 01:26:33", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 01:26:33", updated_at: "2010-09-10 01:36:12"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 124ms (DB: 6) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:12', `perishable_token` = '0X4MqkRTePXO7bD6xKxg', `last_request_at` = '2010-09-10 01:36:12' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 44ms (View: 5, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:30', `perishable_token` = 'vwnc7zpeoFu5DngddlRh', `last_request_at` = '2010-09-10 01:36:30' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 38ms (View: 5, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:36:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:32', `perishable_token` = '8QqrvX7BT0jXD9g5pM2K', `last_request_at` = '2010-09-10 01:36:32' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 25ms (DB: 4) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 18:36:32) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:32', `perishable_token` = 'TJVMybhMf89GJCmkMOV', `last_request_at` = '2010-09-10 01:36:32' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.4ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Permission denied: No matching rules found for show for #<User id: 3, login: "ed72c4fee33e1a5c89bb063f26d6b18e", email: "ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com", crypted_password: "08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33b...", password_salt: "OAGXMC9KMcoXQoxR0d", persistence_token: "ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083...", single_access_token: "g3ApSlL76gIgBFyBaC", perishable_token: "TJVMybhMf89GJCmkMOV", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 01:36:32", current_login_at: "2010-09-10 01:26:33", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 01:26:33", updated_at: "2010-09-10 01:36:32"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 38ms (DB: 6) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:32', `perishable_token` = 'kgx1TvnjhmX10i0YWvXU', `last_request_at` = '2010-09-10 01:36:32' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 38ms (View: 5, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:48', `perishable_token` = 'olVTom4pMGbdJA01i', `last_request_at` = '2010-09-10 01:36:48' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 120ms (View: 5, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:36:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (26.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:51', `perishable_token` = '3gZOdTKMZJcOKNAxV7o', `last_request_at` = '2010-09-10 01:36:51' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 52ms (DB: 29) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 18:36:51) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:51', `perishable_token` = '1ldtymqW5UeC3TKVjVcF', `last_request_at` = '2010-09-10 01:36:51' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 3 ) [0m
+Permission denied: No matching rules found for show for #<User id: 3, login: "ed72c4fee33e1a5c89bb063f26d6b18e", email: "ed72c4fee33e1a5c89bb063f26d6b18e@monotaskit.com", crypted_password: "08c6a272c1bd7f870791f35383c5d51bc4d6a98e936f143d33b...", password_salt: "OAGXMC9KMcoXQoxR0d", persistence_token: "ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083...", single_access_token: "g3ApSlL76gIgBFyBaC", perishable_token: "1ldtymqW5UeC3TKVjVcF", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 01:36:51", current_login_at: "2010-09-10 01:26:33", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 01:26:33", updated_at: "2010-09-10 01:36:51"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 37ms (DB: 6) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:36:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:36:51', `perishable_token` = 'KZphsSCNnbzrGFxDYLUd', `last_request_at` = '2010-09-10 01:36:51' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 125ms (View: 6, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:37:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (20.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:37:35', `perishable_token` = 'tl9xTTLfiBhvKZZq08t', `last_request_at` = '2010-09-10 01:37:35' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 59ms (View: 5, DB: 26) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:37:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (21.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:37:38', `perishable_token` = 'PI8xC5mW8sIgpJ61POE3', `last_request_at` = '2010-09-10 01:37:38' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 62ms (View: 12, DB: 25) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:37:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (102.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:37:46', `perishable_token` = '9qtF2ZnNXu81bH6pHpU', `last_request_at` = '2010-09-10 01:37:46' WHERE `id` = 3[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 143ms (View: 6, DB: 109) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 18:37:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:37:52', `perishable_token` = 'NKwUI5SgAt4nntfPV7e', `last_request_at` = '2010-09-10 01:37:52' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 35ms (View: 6, DB: 4) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:39:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 130ms (View: 94, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-09-09 18:39:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+  [4;36;1mTagging Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+Rendered tasks/_form (95.4ms)
+Completed in 135ms (View: 107, DB: 5) | 200 OK [http://localhost/tasks/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:40:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (23.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 53524ms (View: 4, DB: 27) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:42:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=3):
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:7
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:42:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mSHOW TABLES[0m
+
+NoMethodError (undefined method `exists' for #<Class:0x102d97c10>):
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:7
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:45:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (28.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 57ms (View: 3, DB: 31) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:45:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (23.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 15072ms (View: 3, DB: 26) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:45:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (22.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'd7b79acd526adad123fcf871285a7914@monotaskit.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'd7b79acd526adad123fcf871285a7914') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'bRwPfUU51EI2czx9ZtIz') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'ca027d1513fbafd8c3ec9152d8c6370656396fc6dd50e9a7083257d1181624b2696cf4baf4780cee193cecd0e2fce69efa9823e7b1380026801e810db3fc87ef') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('bRwPfUU51EI2czx9ZtIz', '2010-09-10 01:45:51', '2010-09-10 01:45:51', '6e747e8d712394fa929490c3a84d61b7a0974d3ebb6282f7c514a59a80ac85e81b00045d6e47487ef6084877d117dcedefccbe8e0603f790b1ffca3dff59d071', '3CexKnzoP4bZnlvLcEQ', '2010-09-10 01:45:51', 0, '127.0.0.1', 'NRP67GGMAvAWj7jG4ggj', '2010-09-10 01:45:51', '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9', 1, NULL, 'd7b79acd526adad123fcf871285a7914', NULL, 'd7b79acd526adad123fcf871285a7914@monotaskit.com')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+Completed in 4624ms (View: 3, DB: 27) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-09-09 18:47:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (28.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:47:05', `perishable_token` = 'ECS4ehafghuHiWCv', `last_request_at` = '2010-09-10 01:47:05' WHERE `id` = 4[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (5.2ms)
+Completed in 73ms (View: 8, DB: 34) | 200 OK [http://localhost/tasks/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 18:47:07) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"", "length"=>"", "description"=>""}, "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:47:07', `perishable_token` = 'icuUznPF7MeSb7qTVZC', `last_request_at` = '2010-09-10 01:47:07' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mTask Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (11.1ms)
+Completed in 86ms (View: 14, DB: 8) | 200 OK [http://localhost/tasks]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 18:47:17) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"", "length"=>"4", "description"=>"Something"}, "controller"=>"tasks"}
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 01:47:17', `perishable_token` = 'zjD4RPKf3dPWwoRxU0iz', `last_request_at` = '2010-09-10 01:47:17' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;35;1mTask Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Create (0.2ms)[0m   [0mINSERT INTO `tasks` (`created_at`, `updated_at`, `started`, `user_id`, `description`, `length`) VALUES('2010-09-10 01:47:17', '2010-09-10 01:47:17', NULL, 4, 'Something', 4)[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_id = 1) AND (`taggings`.taggable_type = 'Task')) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 85ms (DB: 8) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:47:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:47:18', `perishable_token` = 'HBFJja320eSCyt8g6g', `last_request_at` = '2010-09-10 01:47:18' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 134ms (View: 5, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:47:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:47:51', `perishable_token` = '871MKhqQhzkIUGdVktc9', `last_request_at` = '2010-09-10 01:47:51' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+
+NoMethodError (undefined method `tasks' for #<User:0x102dd0dd0>):
+  app/controllers/tasks_controller.rb:4:in `index'
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 18:48:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 01:48:18', `perishable_token` = 'rXqGTR9QCOgVy9Si4s6', `last_request_at` = '2010-09-10 01:48:18' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 4) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 156ms (View: 6, DB: 31) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:01:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:01:37', `perishable_token` = 'PIRNjC0wcXKv0C4xia6t', `last_request_at` = '2010-09-10 02:01:37' WHERE `id` = 4[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 4) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 78ms (View: 6, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-09-09 19:01:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:01:48', `perishable_token` = 'VSXsT9dzvvpWmK5hCIW', `last_request_at` = '2010-09-10 02:01:48' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mTask Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (5.2ms)
+Completed in 128ms (View: 9, DB: 7) | 200 OK [http://localhost/tasks/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 19:01:55) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"asd", "length"=>"", "description"=>"Something else"}, "controller"=>"tasks"}
+  [4;35;1mUser Columns (8.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:01:55', `perishable_token` = '2NmufZioQU2Kz9aODe9', `last_request_at` = '2010-09-10 02:01:55' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;35;1mTask Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (7.5ms)
+Completed in 56ms (View: 10, DB: 13) | 200 OK [http://localhost/tasks]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 19:01:59) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"asd", "length"=>"3", "description"=>"Something else"}, "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:01:59', `perishable_token` = 'tjU20QiiaPhuVTkoOXme', `last_request_at` = '2010-09-10 02:01:59' WHERE `id` = 4[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mTask Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.2ms)[0m   [0;1mINSERT INTO `tasks` (`created_at`, `updated_at`, `started`, `user_id`, `description`, `length`) VALUES('2010-09-10 02:01:59', '2010-09-10 02:01:59', NULL, 4, 'Something else', 3)[0m
+  [4;35;1mTag Load (0.3ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_id = 2) AND (`taggings`.taggable_type = 'Task')) [0m
+  [4;36;1mTag Load (0.1ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'asd') LIMIT 1[0m
+  [4;35;1mTag Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'asd') LIMIT 1[0m
+  [4;35;1mTag Create (0.1ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('asd')[0m
+  [4;36;1mTagging Create (0.2ms)[0m   [0;1mINSERT INTO `taggings` (`created_at`, `tag_id`, `taggable_id`, `taggable_type`) VALUES('2010-09-10 02:01:59', 4, 2, 'Task')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 139ms (DB: 13) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:01:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:01:59', `perishable_token` = 'iHKGFGYBnA8dZbUTdVCL', `last_request_at` = '2010-09-10 02:01:59' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 4) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 48ms (View: 6, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:05:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:05:05', `perishable_token` = 'y7EG6IldF8adgI7P4JQK', `last_request_at` = '2010-09-10 02:05:05' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 4) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 62ms (View: 6, DB: 27) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:05:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:05:09', `perishable_token` = 'hLAEz1G1V4k9vRbvapAO', `last_request_at` = '2010-09-10 02:05:09' WHERE `id` = 4[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 66ms (View: 12, DB: 29) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-09 19:05:16) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"tyler"}, "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '232bf3a9eab9d01b47dc803b57a1fe55dec721fbc2f61681736a518a63be6f0292e792a98203a82d01654511ce16f1bbe9e8180fd1eeb5336b787a69e7a3ada9') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:05:16', `perishable_token` = 'hlouR5LWX9S6ll9t4hD', `last_request_at` = '2010-09-10 02:05:16' WHERE `id` = 4[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'tyler') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:05:16', `perishable_token` = 'bd9RoKRd5rCBPHMmomZR', `last_login_at` = '2010-09-09 19:52:52', `last_login_ip` = '127.0.0.1', `current_login_at` = '2010-09-10 02:05:16', `login_count` = 2, `last_request_at` = '2010-09-10 02:05:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/login
+Completed in 36ms (DB: 6) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:05:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:05:16', `perishable_token` = '53LufEkbBajNqoRpVZ4', `last_request_at` = '2010-09-10 02:05:16' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 228238ms (View: 8, DB: 4) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:09:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:20', `perishable_token` = 'P59BNm124tmXdBgQ2WC', `last_request_at` = '2010-09-10 02:09:20' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 4) [0m
+  [4;36;1mTask Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2010-09-10 02:09:20', `user_id` = 1 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Update (0.2ms)[0m   [0mUPDATE `tasks` SET `updated_at` = '2010-09-10 02:09:20', `user_id` = 1 WHERE `id` = 2[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+Completed in 84ms (View: 4, DB: 10) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:09:30) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:30', `perishable_token` = 'mb6bhOWofhAtktbEalN5', `last_request_at` = '2010-09-10 02:09:30' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (2.4ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 1, login: "tyler", email: "tyler@hotmethod.com", crypted_password: "0ec3539c1c855eddc0438b171288117505189a7524afe67a3fe...", password_salt: "duXUG7Aa9piSc7qFggt", persistence_token: "9a372affdcaf75e4440babb50374ca5101933b49e15ccf6226b...", single_access_token: "eRHIhPt73XvcQR36ADu", perishable_token: "mb6bhOWofhAtktbEalN5", login_count: 2, failed_login_count: 0, last_request_at: "2010-09-10 02:09:30", current_login_at: "2010-09-10 02:05:16", last_login_at: "2010-09-09 19:52:52", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1", created_at: "2010-09-09 19:52:52", updated_at: "2010-09-10 02:09:30"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 40ms (DB: 9) | 302 Found [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:09:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:30', `perishable_token` = 'kowhIJ4wOEBfQs48qkM', `last_request_at` = '2010-09-10 02:09:30' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 42ms (View: 6, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-09 19:09:33) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (24.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:33', `perishable_token` = 'mwsVRif91kLz3hTmUcRS', `last_request_at` = '2010-09-10 02:09:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 54ms (DB: 29) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:09:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '3eb7105b16a6d5246c275922921f537a@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '3eb7105b16a6d5246c275922921f537a') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '1kIzVaMBcggb2kwyee5E') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('1kIzVaMBcggb2kwyee5E', '2010-09-10 02:09:33', '2010-09-10 02:09:33', 'a8d53104ac9de86d75322b30e6da1f2c9b03341f07d5257f00cae4f81cc2625250e0723209b07a9303b0cb49a4a5b7b6d7f0f9cb5c43b33b505f5bb9963236fa', 'nFX5aX20GJG43Y5ZGVT', '2010-09-10 02:09:33', 0, '127.0.0.1', 'kErjJ1rhfS8zXJDvS6Cz', '2010-09-10 02:09:33', 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6', 1, NULL, '3eb7105b16a6d5246c275922921f537a', NULL, '3eb7105b16a6d5246c275922921f537a@monotaskit.com')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 44ms (View: 6, DB: 6) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:09:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (20.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:35', `perishable_token` = 'ohGGqikcQAnTGFjMP4fk', `last_request_at` = '2010-09-10 02:09:35' WHERE `id` = 5[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 5) [0m
+Completed in 57ms (View: 4, DB: 24) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-09-09 19:09:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:37', `perishable_token` = 'MLLQlKMQkT6pHVmgEoAR', `last_request_at` = '2010-09-10 02:09:37' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;36;1mTask Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (5.1ms)
+Completed in 63ms (View: 9, DB: 25) | 200 OK [http://localhost/tasks/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 19:09:47) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"rerg", "length"=>"44", "description"=>"Monkey japes"}, "controller"=>"tasks"}
+  [4;35;1mUser Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:47', `perishable_token` = '0setinWZYI8ix3zhMey', `last_request_at` = '2010-09-10 02:09:47' WHERE `id` = 5[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;35;1mTask Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Create (0.2ms)[0m   [0mINSERT INTO `tasks` (`created_at`, `updated_at`, `started`, `user_id`, `description`, `length`) VALUES('2010-09-10 02:09:47', '2010-09-10 02:09:47', NULL, 5, 'Monkey japes', 44)[0m
+  [4;36;1mTag Load (0.4ms)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_id = 3) AND (`taggings`.taggable_type = 'Task')) [0m
+  [4;35;1mTag Load (0.2ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'rerg') LIMIT 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'rerg') LIMIT 1[0m
+  [4;35;1mTag Create (0.1ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('rerg')[0m
+  [4;36;1mTagging Create (0.2ms)[0m   [0;1mINSERT INTO `taggings` (`created_at`, `tag_id`, `taggable_id`, `taggable_type`) VALUES('2010-09-10 02:09:47', 5, 3, 'Task')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 139ms (DB: 11) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:09:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:47', `perishable_token` = 'ab3kxBrOIjbyD6zkadp', `last_request_at` = '2010-09-10 02:09:47' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 5) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 49ms (View: 6, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:09:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:51', `perishable_token` = 'bQPsDv2tvm2fciqZKL5', `last_request_at` = '2010-09-10 02:09:51' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 138ms (View: 6, DB: 23) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-09 19:09:56) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"tyler"}, "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'dee109df994dd2d702961f20a7df430ed23310e12db63370e85e3b333ccbc51216dee111d3b2f5d520e087d9cd91c1dd746443437c48da70de27b1493f4f8ac6') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:56', `perishable_token` = 'k326XP66zJT3WUn8F9', `last_request_at` = '2010-09-10 02:09:56' WHERE `id` = 5[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'tyler') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:56', `perishable_token` = 'zzcljVWTXBZ4CjDKdA5M', `last_login_at` = '2010-09-10 02:05:16', `current_login_at` = '2010-09-10 02:09:56', `login_count` = 3, `last_request_at` = '2010-09-10 02:09:56' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 39ms (DB: 8) | 302 Found [http://localhost/user_session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 19:09:56) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:56', `perishable_token` = 'ttotWEXbWEAn3QWkSdB', `last_request_at` = '2010-09-10 02:09:56' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 5) [0m
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 5) [0m
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE `tasks` SET `updated_at` = '2010-09-10 02:09:56', `user_id` = 1 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mroles_users Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Permission denied: No matching rules found for show for #<User id: 1, login: "tyler", email: "tyler@hotmethod.com", crypted_password: "0ec3539c1c855eddc0438b171288117505189a7524afe67a3fe...", password_salt: "duXUG7Aa9piSc7qFggt", persistence_token: "9a372affdcaf75e4440babb50374ca5101933b49e15ccf6226b...", single_access_token: "eRHIhPt73XvcQR36ADu", perishable_token: "ttotWEXbWEAn3QWkSdB", login_count: 3, failed_login_count: 0, last_request_at: "2010-09-10 02:09:56", current_login_at: "2010-09-10 02:09:56", last_login_at: "2010-09-10 02:05:16", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1", created_at: "2010-09-09 19:52:52", updated_at: "2010-09-10 02:09:56"> (roles [:guest], privileges [:show], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 52ms (DB: 9) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:09:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:09:57', `perishable_token` = 'Mp5mx1COe2U9eqT6hbQ', `last_request_at` = '2010-09-10 02:09:57' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 129ms (View: 7, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:11:10) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:11:11', `perishable_token` = 'zJIFjQ2LPiMBipgp7owt', `last_request_at` = '2010-09-10 02:11:11' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.7ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 1, login: "tyler", email: "tyler@hotmethod.com", crypted_password: "0ec3539c1c855eddc0438b171288117505189a7524afe67a3fe...", password_salt: "duXUG7Aa9piSc7qFggt", persistence_token: "9a372affdcaf75e4440babb50374ca5101933b49e15ccf6226b...", single_access_token: "eRHIhPt73XvcQR36ADu", perishable_token: "zJIFjQ2LPiMBipgp7owt", login_count: 3, failed_login_count: 0, last_request_at: "2010-09-10 02:11:11", current_login_at: "2010-09-10 02:09:56", last_login_at: "2010-09-10 02:05:16", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1", created_at: "2010-09-09 19:52:52", updated_at: "2010-09-10 02:11:11"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 57ms (DB: 28) | 302 Found [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:11:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:11:11', `perishable_token` = 'doNjMAsBISx72c76b8', `last_request_at` = '2010-09-10 02:11:11' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 135ms (View: 91, DB: 7) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:11:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (17.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:11:37', `perishable_token` = 'K25Qz5Dowy3YOnKF4hC', `last_request_at` = '2010-09-10 02:11:37' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 61ms (View: 7, DB: 23) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:11:40) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:11:40', `perishable_token` = 'uHYiuwLGjFwb2LCMW02m', `last_request_at` = '2010-09-10 02:11:40' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.7ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 1, login: "tyler", email: "tyler@hotmethod.com", crypted_password: "0ec3539c1c855eddc0438b171288117505189a7524afe67a3fe...", password_salt: "duXUG7Aa9piSc7qFggt", persistence_token: "9a372affdcaf75e4440babb50374ca5101933b49e15ccf6226b...", single_access_token: "eRHIhPt73XvcQR36ADu", perishable_token: "uHYiuwLGjFwb2LCMW02m", login_count: 3, failed_login_count: 0, last_request_at: "2010-09-10 02:11:40", current_login_at: "2010-09-10 02:09:56", last_login_at: "2010-09-10 02:05:16", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1", created_at: "2010-09-09 19:52:52", updated_at: "2010-09-10 02:11:40"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 57ms (DB: 27) | 302 Found [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:11:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:11:40', `perishable_token` = 'jI48Dnttucj8i1I4g8Vm', `last_request_at` = '2010-09-10 02:11:40' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 133ms (View: 7, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:12:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:12:02', `perishable_token` = 'MhB2QLMGCP8bmBtQned', `last_request_at` = '2010-09-10 02:12:02' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 41ms (View: 7, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:12:04) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:12:04', `perishable_token` = 'f6lNckJo5ie8dWAOYwo3', `last_request_at` = '2010-09-10 02:12:04' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.3ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 1, login: "tyler", email: "tyler@hotmethod.com", crypted_password: "0ec3539c1c855eddc0438b171288117505189a7524afe67a3fe...", password_salt: "duXUG7Aa9piSc7qFggt", persistence_token: "9a372affdcaf75e4440babb50374ca5101933b49e15ccf6226b...", single_access_token: "eRHIhPt73XvcQR36ADu", perishable_token: "f6lNckJo5ie8dWAOYwo3", login_count: 3, failed_login_count: 0, last_request_at: "2010-09-10 02:12:04", current_login_at: "2010-09-10 02:09:56", last_login_at: "2010-09-10 02:05:16", current_login_ip: "127.0.0.1", last_login_ip: "127.0.0.1", created_at: "2010-09-09 19:52:52", updated_at: "2010-09-10 02:12:04"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 142ms (DB: 28) | 302 Found [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:12:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:12:04', `perishable_token` = 'Z2CStvA2qHkRhRE7cdIf', `last_request_at` = '2010-09-10 02:12:04' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 49ms (View: 7, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mRole Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (25.3ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Create (0.2ms)[0m   [0mINSERT INTO `roles` (`created_at`, `title`, `updated_at`) VALUES('2010-09-10 02:14:09', NULL, '2010-09-10 02:14:09')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:14:09', '2010-09-10 02:14:09', 1, 1)[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) [0m
+  [4;36;1mSQL (245.0ms)[0m   [0;1mdescribe `roles_users`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Create (0.2ms)[0m   [0;1mINSERT INTO `roles` (`created_at`, `title`, `updated_at`) VALUES('2010-09-10 02:15:07', 'member', '2010-09-10 02:15:07')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:15:07', '2010-09-10 02:15:07', 2, 4)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Create (0.7ms)[0m   [0;1mINSERT INTO `roles` (`created_at`, `title`, `updated_at`) VALUES('2010-09-10 02:16:27', 'member', '2010-09-10 02:16:27')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mRole Load (1.3ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`id` = 3) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (29.3ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:16:27', '2010-09-10 02:16:27', 3, 1)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:17:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:17:05', `perishable_token` = 'YyQ4VeT1GQMmD5vJVYR', `last_request_at` = '2010-09-10 02:17:05' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 76ms (View: 7, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:17:06) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:17:06', `perishable_token` = 'K4EbYDH3ikJm9oTB5Sc4', `last_request_at` = '2010-09-10 02:17:06' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.4ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (6.4ms)
+Completed in 174ms (View: 22, DB: 33) | 200 OK [http://localhost/users/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:17:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:17:09', `perishable_token` = 'cazpraYqwgsMEJ7RlWtZ', `last_request_at` = '2010-09-10 02:17:09' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 1) [0m
+  [4;35;1mTask Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 43ms (View: 7, DB: 8) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-09 19:18:07) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:07', `perishable_token` = 'uuXAjIWx0XLBWoonG2Q', `last_request_at` = '2010-09-10 02:18:07' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 115ms (DB: 4) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:18:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '0b93dc125599f485709aef403295f054@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '0b93dc125599f485709aef403295f054') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'u6XgCWpEFCB8re6cXg1') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('u6XgCWpEFCB8re6cXg1', '2010-09-10 02:18:07', '2010-09-10 02:18:07', '060d3204b0185e87b4e05f7bddae6f2ec9d459b2bc122310fe52517d0085f856457df70bf270cfa9dfd761ea6e327570054fd44a0d472c5411cfff8458db1ea1', 'smEKRedLEtQ9y1vo7f3', '2010-09-10 02:18:07', 0, '127.0.0.1', 'SpFefr2CAuhyra5F0K1G', '2010-09-10 02:18:07', '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae', 1, NULL, '0b93dc125599f485709aef403295f054', NULL, '0b93dc125599f485709aef403295f054@monotaskit.com')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 46ms (View: 6, DB: 5) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-09 19:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (56.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:09', `perishable_token` = 'n1jIDOr1sYeziWFNHw7L', `last_request_at` = '2010-09-10 02:18:09' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mroles_users Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 6 ) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.5ms)
+Completed in 106ms (View: 13, DB: 62) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-09 19:18:20) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"schleg", "email"=>"schleg@gmail.com"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:20', `perishable_token` = 'uoRjYFtNUOmR0tOnGaHh', `last_request_at` = '2010-09-10 02:18:20' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mroles_users Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 6 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'schleg@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'schleg') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'bd50f25151f38b615b6c65a80045cad8bc018a638255d737dc14d70dae8be78f382930e45ec0958dd15ce32f40be756d28b0085886c23e9a944c57368fea7621') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'uLs7EmuP95nLhP81pAl6') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:20', `perishable_token` = 'iyl78lGOJpiCY7zPXb6x', `last_request_at` = '2010-09-10 02:18:20' WHERE `id` = 6[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('uLs7EmuP95nLhP81pAl6', NULL, '2010-09-10 02:18:20', 'edecb6d0426f9bf0657f3bffc0d2d731b0a3767338cb48f369063bd3f1960f8b737e2ce63affdb0655d1176335421ffbf94d260af3210762ca133c58091b5e6a', 'uTlYDdw1txfKKT8Djpla', '2010-09-10 02:18:20', 0, NULL, 'aL5BvzyIeMyVmNr9qpV', NULL, 'bd50f25151f38b615b6c65a80045cad8bc018a638255d737dc14d70dae8be78f382930e45ec0958dd15ce32f40be756d28b0085886c23e9a944c57368fea7621', 0, NULL, 'schleg', NULL, 'schleg@gmail.com')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`title` = 'member') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:16:27', '2010-09-10 02:16:27', 3, 7)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/7/edit
+Completed in 64ms (DB: 15) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:18:20) [GET]
+  Parameters: {"action"=>"edit", "id"=>"7", "controller"=>"users"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:20', `perishable_token` = 'aj07Ijt4ihZkOhifNgG', `last_request_at` = '2010-09-10 02:18:20' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 6 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 6, login: "0b93dc125599f485709aef403295f054", email: "0b93dc125599f485709aef403295f054@monotaskit.com", crypted_password: "060d3204b0185e87b4e05f7bddae6f2ec9d459b2bc122310fe5...", password_salt: "SpFefr2CAuhyra5F0K1G", persistence_token: "05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c...", single_access_token: "u6XgCWpEFCB8re6cXg1", perishable_token: "aj07Ijt4ihZkOhifNgG", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 02:18:20", current_login_at: "2010-09-10 02:18:07", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 02:18:07", updated_at: "2010-09-10 02:18:20"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 36ms (DB: 6) | 302 Found [http://localhost/users/7/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:18:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:20', `perishable_token` = 'O4lluoQcNtMkEWdm44ix', `last_request_at` = '2010-09-10 02:18:20' WHERE `id` = 6[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 6) [0m
+Completed in 121ms (View: 4, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:18:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (20.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:23', `perishable_token` = 'tATy7w61LBC5MD95Fi', `last_request_at` = '2010-09-10 02:18:23' WHERE `id` = 6[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 56ms (View: 6, DB: 25) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-09 19:18:29) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"schleg"}, "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (9.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '05aaa97ebb5d50e811aa7a00912da800bbe21e9f26f900dde4c3da22b5cb491c12c2fcff2f75143a65231b9d2ce50ad1d8d66f10c18485ebbf3fb7c35979a5ae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:29', `perishable_token` = 'lx1V5FKMKzkYrBNbUtT2', `last_request_at` = '2010-09-10 02:18:29' WHERE `id` = 6[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'schleg') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:29', `perishable_token` = 'FkyxTwuPij4gKBJz8TW2', `current_login_at` = '2010-09-10 02:18:29', `login_count` = 1, `current_login_ip` = '127.0.0.1', `last_request_at` = '2010-09-10 02:18:29' WHERE `id` = 7[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 43ms (DB: 13) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 19:18:29) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:29', `perishable_token` = 'IefNfGzKmjII4amZ6Se', `last_request_at` = '2010-09-10 02:18:29' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 6) [0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 6) [0m
+  [4;35;1mroles_users Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 7 ) [0m
+  [4;35;1mRole Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+
+ActionView::MissingTemplate (Missing template users/show.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/declarative_authorization-0.5/app/views):
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 19:18:34) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (21.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:34', `perishable_token` = 'KJyp04EIMzvHdSqiPAC5', `last_request_at` = '2010-09-10 02:18:34' WHERE `id` = 7[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.7ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 7 ) [0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+
+ActionView::MissingTemplate (Missing template users/show.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/declarative_authorization-0.5/app/views):
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:18:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:40', `perishable_token` = 'UA0ntVLfz4yEbt21cUl', `last_request_at` = '2010-09-10 02:18:40' WHERE `id` = 7[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 7) [0m
+Completed in 121ms (View: 4, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:18:43) [GET]
+  Parameters: {"action"=>"edit", "id"=>"7", "controller"=>"users"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:18:43', `perishable_token` = 'YPH3NDfd5LSG9qG6bK40', `last_request_at` = '2010-09-10 02:18:43' WHERE `id` = 7[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 7 ) [0m
+  [4;36;1mRole Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.3ms)
+Completed in 70ms (View: 8, DB: 29) | 200 OK [http://localhost/users/7/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-09 19:19:09) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '7') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:09', `perishable_token` = 'GJCV8xnOkTIqnbnMrO', `last_request_at` = '2010-09-10 02:19:09' WHERE `id` = 7[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 56ms (DB: 30) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:19:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '33f38b62672f620e4c3c02d59396bb28@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '33f38b62672f620e4c3c02d59396bb28') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'MFccTVUdK2atkXGI8jM') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('MFccTVUdK2atkXGI8jM', '2010-09-10 02:19:09', '2010-09-10 02:19:09', '38145db91f4391699e9b0efd862f56fc0dca34a8a28682c8d073effda186e72e4ab696a2ee02cff8fef103bbcfe8d74ef0c1d13514aa8133ee70ead461614f24', 'bDiHPTLSejFj7BnnhetZ', '2010-09-10 02:19:09', 0, '127.0.0.1', 'rbAkh8aGNMHL09TssTkG', '2010-09-10 02:19:09', '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be', 1, NULL, '33f38b62672f620e4c3c02d59396bb28', NULL, '33f38b62672f620e4c3c02d59396bb28@monotaskit.com')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 131ms (View: 6, DB: 4) | 200 OK [http://localhost/user_session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-09 19:19:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (21.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:12', `perishable_token` = 'xH6pkS8D6o79FOJPXFki', `last_request_at` = '2010-09-10 02:19:12' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 64ms (View: 7, DB: 27) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-09 19:19:28) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"froggerdog", "email"=>"froggerdog@gmail.com"}}
+  [4;35;1mUser Columns (9.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:28', `perishable_token` = 'vzRSAu356jZZvMNYdtT4', `last_request_at` = '2010-09-10 02:19:28' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'froggerdog@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'froggerdog') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '0c097d917ac9b4a988b2649ab8817496b0b6ceecaebeb0d676bcc9cd2009584255f1f3e80e0b00ec3911c1fbf506be44f9b6f7d38426f98942534de70d393870') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'c0xssF4qWsAPoHvr66hY') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:28', `perishable_token` = 'y2WZ3MbXMj9Ax9DumW5c', `last_request_at` = '2010-09-10 02:19:28' WHERE `id` = 8[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('c0xssF4qWsAPoHvr66hY', NULL, '2010-09-10 02:19:28', '60ddd18aed2de7f0d1923e5b9fc7296e2aa543a76116ef40ae4c06f968ee0e5caf737475edd37bf9de4af8e0cdac6dc243e37403a20a7ec68ceecac0167cbb08', 'DgU0k1nN2tVVZPxzoFza', '2010-09-10 02:19:28', 0, NULL, 'Sp1KSSTlxNR6E55o9bjR', NULL, '0c097d917ac9b4a988b2649ab8817496b0b6ceecaebeb0d676bcc9cd2009584255f1f3e80e0b00ec3911c1fbf506be44f9b6f7d38426f98942534de70d393870', 0, NULL, 'froggerdog', NULL, 'froggerdog@gmail.com')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`title` = 'member') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:16:27', '2010-09-10 02:16:27', 3, 9)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/9/edit
+Completed in 154ms (DB: 20) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:19:28) [GET]
+  Parameters: {"action"=>"edit", "id"=>"9", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:28', `perishable_token` = 'GT3Sok5PIbYcS6WlXOie', `last_request_at` = '2010-09-10 02:19:28' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (3.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 8 ) [0m
+Permission denied: No matching rules found for edit for #<User id: 8, login: "33f38b62672f620e4c3c02d59396bb28", email: "33f38b62672f620e4c3c02d59396bb28@monotaskit.com", crypted_password: "38145db91f4391699e9b0efd862f56fc0dca34a8a28682c8d07...", password_salt: "rbAkh8aGNMHL09TssTkG", persistence_token: "9022809e92464c65670abb59033edbbb46d0726a70ec5452248...", single_access_token: "MFccTVUdK2atkXGI8jM", perishable_token: "GT3Sok5PIbYcS6WlXOie", login_count: 1, failed_login_count: 0, last_request_at: "2010-09-10 02:19:28", current_login_at: "2010-09-10 02:19:09", last_login_at: nil, current_login_ip: "127.0.0.1", last_login_ip: nil, created_at: "2010-09-10 02:19:09", updated_at: "2010-09-10 02:19:28"> (roles [:guest], privileges [:edit], context :users).
+Redirected to http://localhost:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 39ms (DB: 8) | 302 Found [http://localhost/users/9/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:19:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:19:28', `perishable_token` = 'bQphF0cKAHM6cYp4Tgus', `last_request_at` = '2010-09-10 02:19:28' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 8) [0m
+Completed in 36ms (View: 4, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-09 19:21:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'df919831fe46dcd4884f92b50d5ed73d@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'df919831fe46dcd4884f92b50d5ed73d') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'vs12sMZtChiXmwPQk2wq') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '9022809e92464c65670abb59033edbbb46d0726a70ec5452248c977a2235d69644386417f70487f6ceb64b6f16cc048ae30150777c4f698b123ea8024b7619be') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('vs12sMZtChiXmwPQk2wq', '2010-09-10 02:21:10', '2010-09-10 02:21:10', '80acfd5cd9ed6d41c545071c34185e38fd0f78b7fa79905be8f80318715d5a01f5a3b7d8391c9fbd9bf8c1dfedb8ec6431d0675d5b8e85cb168c966c451b9afb', '3TC0kV28JnILMLldll', '2010-09-10 02:21:10', 0, '127.0.0.1', 'iMaZ5JA3Adu6rtpnWNpk', '2010-09-10 02:21:10', '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26', 1, NULL, 'df919831fe46dcd4884f92b50d5ed73d', NULL, 'df919831fe46dcd4884f92b50d5ed73d@monotaskit.com')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mroles_users Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.3ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 10 ) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (6.7ms)
+Completed in 337ms (View: 31, DB: 7) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-09 19:21:21) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"schleg", "email"=>"schleg@gmail.com"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:21', `perishable_token` = 'W3T5yLNB28JVQ8rESTLU', `last_request_at` = '2010-09-10 02:21:21' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 10 ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'schleg@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'schleg') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2800992ddbdced0fb31dba23865d05805fae061d72075f67ab5e09d13ace04bc3b1feb281ddbf679c83d8a10b371a9eea421431141040e51483441817f0713b6') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'KXVKpuXKPIu8aAdrr5M') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:21', `perishable_token` = 'ERZUpz0n8jRfo3qd8NXo', `last_request_at` = '2010-09-10 02:21:21' WHERE `id` = 10[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('KXVKpuXKPIu8aAdrr5M', NULL, '2010-09-10 02:21:21', '550c4d9bf67a5070925751cc09d4f3c4a2a13572ceb2f92549a480d15148eb18cc4971d1ea83a624cb836d2947240367a0a9bcadd59c503462609e7a43c2242a', 'iDUOYe0zS0moCRbLnDk', '2010-09-10 02:21:21', 0, NULL, 'pWHMuQNDEogqWJr27dx', NULL, '2800992ddbdced0fb31dba23865d05805fae061d72075f67ab5e09d13ace04bc3b1feb281ddbf679c83d8a10b371a9eea421431141040e51483441817f0713b6', 0, NULL, 'schleg', NULL, 'schleg@gmail.com')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`title` = 'member') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `roles_users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:16:27', '2010-09-10 02:16:27', 3, 11)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 63ms (DB: 14) | 302 Found [http://localhost/account]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:21:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:21', `perishable_token` = 'aoctL0WsODijI7ZVSbjl', `last_request_at` = '2010-09-10 02:21:21' WHERE `id` = 10[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 10) [0m
+Completed in 49ms (View: 14, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:21:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (26.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:27', `perishable_token` = '2e4rn7Eg4MHUOY6qjx', `last_request_at` = '2010-09-10 02:21:27' WHERE `id` = 10[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 68ms (View: 13, DB: 30) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-09 19:21:32) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"schleg"}, "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2c3dd1585376329ee0f930c43a83ab0021e87761c363bed8b05766c2cfb07166a55395044bb78a6f3dd5f68e669ccba2450eb3bc64f19b099683dfaf3f7b2b26') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:32', `perishable_token` = 'K9nws5sbneoPxTExrE', `last_request_at` = '2010-09-10 02:21:32' WHERE `id` = 10[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'schleg') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:32', `perishable_token` = '62mw5Lu36z0d8p1ylVKX', `current_login_at` = '2010-09-10 02:21:32', `login_count` = 1, `current_login_ip` = '127.0.0.1', `last_request_at` = '2010-09-10 02:21:32' WHERE `id` = 11[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/account
+Completed in 120ms (DB: 6) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-09 19:21:32) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '11') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:32', `perishable_token` = 'Fkt22OKOaB9bGBiFSlN', `last_request_at` = '2010-09-10 02:21:32' WHERE `id` = 11[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 10) [0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 10) [0m
+  [4;35;1mroles_users Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 11 ) [0m
+  [4;35;1mRole Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+
+ActionView::MissingTemplate (Missing template users/show.erb in view path app/views:/Library/Ruby/Gems/1.8/gems/declarative_authorization-0.5/app/views):
+  haml (3.0.18) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:21:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (22.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '11') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:21:55', `perishable_token` = '3umsUidf1y3cVLr9G0SN', `last_request_at` = '2010-09-10 02:21:55' WHERE `id` = 11[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 11) [0m
+Completed in 144ms (View: 4, DB: 27) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-09 19:22:17) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '11') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:17', `perishable_token` = 'cCEy8Z45DwzA4GI24MAz', `last_request_at` = '2010-09-10 02:22:17' WHERE `id` = 11[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 63ms (DB: 4) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:22:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '33a05c81a87aebd52c5e9438d4e2ce3c@monotaskit.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '33a05c81a87aebd52c5e9438d4e2ce3c') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY '4rAR8qzzrAbLtrWGoOts') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('4rAR8qzzrAbLtrWGoOts', '2010-09-10 02:22:18', '2010-09-10 02:22:18', 'd6cf0be68acf7fe99ab2eff86d0baf0c976ba878220cb2f3863c55cdff03d6e73748c91e29c181a2f779a00e01750251646277f3217d162fd8469d12d5ce098c', 'r2ex7rAM33k4GI3xwlCC', '2010-09-10 02:22:18', 0, '127.0.0.1', 'kQVgZGxKSW4FRDbLrJ', '2010-09-10 02:22:18', 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71', 1, NULL, '33a05c81a87aebd52c5e9438d4e2ce3c', NULL, '33a05c81a87aebd52c5e9438d4e2ce3c@monotaskit.com')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 45ms (View: 6, DB: 4) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:22:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 12) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '0430fb1250165d3c91f90a6165f5a2e9@monotaskit.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY '0430fb1250165d3c91f90a6165f5a2e9') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'ZAmaNxukAWXRpOuJYIy') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'e80b9af80208f48a83a21ce3b4df81e05db5c4344643c8f954acc23ae1c699dc0fc24ea80178dd6ac6ab97f209625d94475c35b914af29a1f00d212163207b71') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('ZAmaNxukAWXRpOuJYIy', '2010-09-10 02:22:28', '2010-09-10 02:22:28', 'd30cc0d9f3dfb6c6362a7fa4b06b06204687116fdf2150f237bd8681ba3ca2cbac3464d202d908b49c3b96186cdc7be47b5677dee55b97f7d22272e60f50a582', 'Ul8urqWoB83B56QP7BtV', '2010-09-10 02:22:28', 0, '127.0.0.1', 'UfHvXEFdBx53qwsNjdg1', '2010-09-10 02:22:28', 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb', 1, NULL, '0430fb1250165d3c91f90a6165f5a2e9', NULL, '0430fb1250165d3c91f90a6165f5a2e9@monotaskit.com')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 13) [0m
+Completed in 135ms (View: 4, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-09 19:22:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:29', `perishable_token` = 'LNOOGKuz73yirgvwNVqu', `last_request_at` = '2010-09-10 02:22:29' WHERE `id` = 13[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 13 ) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 44ms (View: 8, DB: 6) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-09 19:22:39) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"schleg", "email"=>"schleg@gmail.com"}}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:39', `perishable_token` = 'r9xzkG8kyvCKrrzMM3', `last_request_at` = '2010-09-10 02:22:39' WHERE `id` = 13[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 13 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'schleg@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'schleg') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '9ca06987bc12a153b77e4bbe9da88d36aca83e05dda46412c43cf999213443267ee874ca9a155920a90fd1804857815836e41a69928d3f65ecd535ff5cd1f103') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`single_access_token` = BINARY 'y8tHtfwu32BcxqSUSn8') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:39', `perishable_token` = 'fqVM27YMR7slJ5vbIO', `last_request_at` = '2010-09-10 02:22:39' WHERE `id` = 13[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`single_access_token`, `last_request_at`, `created_at`, `crypted_password`, `perishable_token`, `updated_at`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('y8tHtfwu32BcxqSUSn8', NULL, '2010-09-10 02:22:39', '584ed2a5720b3fc2f0987d3d162fac0313d562f5ad46fa02f3b208120822c1430533ee3bbb1b3b59b76ea8086dd88744ad154a4989f0ae71987a88f06557ada5', 'qDcZw367GJx7mbSkNhu', '2010-09-10 02:22:39', 0, NULL, 'DkEWdiXvELBmzEr9pXh7', NULL, '9ca06987bc12a153b77e4bbe9da88d36aca83e05dda46412c43cf999213443267ee874ca9a155920a90fd1804857815836e41a69928d3f65ecd535ff5cd1f103', 0, NULL, 'schleg', NULL, 'schleg@gmail.com')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`title` = 'member') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `roles_users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO `roles_users` (`created_at`, `updated_at`, `role_id`, `user_id`) VALUES ('2010-09-10 02:16:27', '2010-09-10 02:16:27', 3, 14)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/login
+Completed in 143ms (DB: 12) | 302 Found [http://localhost/account]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-09 19:22:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:39', `perishable_token` = '21wWB5rTTueO23ZmWy', `last_request_at` = '2010-09-10 02:22:39' WHERE `id` = 13[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 6, DB: 4) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-09 19:22:46) [POST]
+  Parameters: {"commit"=>"Log In", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"schleg"}, "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "controller"=>"user_sessions"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a1c37785124649a45aa388be904bd6b37b8e421e2353edc14ff23b8e82020564bd02e8e4dfc29228b0d3580255514f1510bec832e26fa058a2420b5b20e7faeb') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:46', `perishable_token` = 'JIGdlFcNsgax1BxtljAr', `last_request_at` = '2010-09-10 02:22:46' WHERE `id` = 13[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'schleg') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:46', `perishable_token` = 'OuWYY97exnbqWf9Q7wtj', `current_login_at` = '2010-09-10 02:22:46', `login_count` = 1, `current_login_ip` = '127.0.0.1', `last_request_at` = '2010-09-10 02:22:46' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 6) | 302 Found [http://localhost/user_session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:22:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:46', `perishable_token` = 'knufueV4yInFY9us8avv', `last_request_at` = '2010-09-10 02:22:46' WHERE `id` = 14[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 13) [0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 13) [0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+Completed in 127ms (View: 4, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-09-09 19:22:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (46.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:51', `perishable_token` = 'NlIVQxD77hKnqet1', `last_request_at` = '2010-09-10 02:22:51' WHERE `id` = 14[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Rendering template within layouts/application
+Rendering tasks/new
+  [4;35;1mTagging Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+Rendered tasks/_form (19.1ms)
+Completed in 115ms (View: 30, DB: 54) | 200 OK [http://localhost/tasks/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#create (for 127.0.0.1 at 2010-09-09 19:22:59) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "authenticity_token"=>"szsKPl172XHZlC1TR2V+pqOjedCFa9+o+cnXwujb2is=", "task"=>{"tag_list"=>"aslkd,asdlkasd", "length"=>"67", "description"=>"Something"}, "controller"=>"tasks"}
+  [4;36;1mUser Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:59', `perishable_token` = 'CEbhziPS8aJKl3JiUGp', `last_request_at` = '2010-09-10 02:22:59' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mTask Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Create (0.2ms)[0m   [0;1mINSERT INTO `tasks` (`created_at`, `updated_at`, `started`, `user_id`, `description`, `length`) VALUES('2010-09-10 02:22:59', '2010-09-10 02:22:59', NULL, 14, 'Something', 67)[0m
+  [4;35;1mTag Load (0.4ms)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN `taggings` ON `tags`.id = `taggings`.tag_id WHERE ((`taggings`.taggable_id = 4) AND (`taggings`.taggable_type = 'Task')) [0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'aslkd') LIMIT 1[0m
+  [4;35;1mTag Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'aslkd') LIMIT 1[0m
+  [4;35;1mTag Create (0.1ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('aslkd')[0m
+  [4;36;1mTagging Create (0.2ms)[0m   [0;1mINSERT INTO `taggings` (`created_at`, `tag_id`, `taggable_id`, `taggable_type`) VALUES('2010-09-10 02:22:59', 6, 4, 'Task')[0m
+  [4;35;1mTag Load (0.2ms)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'asdlkasd') LIMIT 1[0m
+  [4;36;1mTag Load (0.3ms)[0m   [0;1mSELECT `tags`.id FROM `tags` WHERE (`tags`.`name` = BINARY 'asdlkasd') LIMIT 1[0m
+  [4;35;1mTag Create (0.2ms)[0m   [0mINSERT INTO `tags` (`name`) VALUES('asdlkasd')[0m
+  [4;36;1mTagging Create (0.2ms)[0m   [0;1mINSERT INTO `taggings` (`created_at`, `tag_id`, `taggable_id`, `taggable_type`) VALUES('2010-09-10 02:22:59', 7, 4, 'Task')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 151ms (DB: 14) | 302 Found [http://localhost/tasks]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:22:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:22:59', `perishable_token` = 'FswFTblD4iVDedsEd279', `last_request_at` = '2010-09-10 02:22:59' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;35;1mTask Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 45ms (View: 6, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:23:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:16', `perishable_token` = 'YvEVf3lpMThjhVxDusw8', `last_request_at` = '2010-09-10 02:23:16' WHERE `id` = 14[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 68ms (View: 7, DB: 33) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:23:18) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"users"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (23.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:18', `perishable_token` = 'NHFjLsZU570t1n1OeA6l', `last_request_at` = '2010-09-10 02:23:18' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.8ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 14 ) [0m
+  [4;36;1mRole Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 14) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.3ms)
+Completed in 75ms (View: 13, DB: 31) | 200 OK [http://localhost/users/14/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:23:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:21', `perishable_token` = 'qi2RjQoLZKwXuBr2fyED', `last_request_at` = '2010-09-10 02:23:21' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;35;1mTask Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 126ms (View: 6, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-09 19:23:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"users"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:22', `perishable_token` = '5a9VWETVNfI11lnkSwW1', `last_request_at` = '2010-09-10 02:23:22' WHERE `id` = 14[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 14 ) [0m
+  [4;36;1mRole Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 14) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.2ms)
+Completed in 74ms (View: 8, DB: 34) | 200 OK [http://localhost/users/14/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:23:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (28.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:25', `perishable_token` = 'MACjd3Sm5yoJYVJaPIQa', `last_request_at` = '2010-09-10 02:23:25' WHERE `id` = 14[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;35;1mTask Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 157ms (View: 91, DB: 35) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#start (for 127.0.0.1 at 2010-09-09 19:23:27) [GET]
+  Parameters: {"action"=>"start", "id"=>"4", "controller"=>"tasks"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:27', `perishable_token` = 'LU8zpDIE15AyoCPGXIk2', `last_request_at` = '2010-09-10 02:23:27' WHERE `id` = 14[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mTask Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+  [4;35;1mTask Load (2.9ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 4) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTask Update (1.0ms)[0m   [0mUPDATE `tasks` SET `started` = '2010-09-10 02:23:27', `updated_at` = '2010-09-10 02:23:27' WHERE `id` = 4[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 48ms (DB: 12) | 302 Found [http://localhost/tasks/4/start]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:23:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:27', `perishable_token` = 'UQ0ZXUgLlEIBwh2ia35', `last_request_at` = '2010-09-10 02:23:27' WHERE `id` = 14[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;36;1mTask Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `tasks`[0m
+Completed in 43ms (View: 6, DB: 7) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#stop (for 127.0.0.1 at 2010-09-09 19:23:48) [GET]
+  Parameters: {"action"=>"stop", "id"=>"4", "controller"=>"tasks"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:48', `perishable_token` = 'EuvupU0h9V0joCglZsp', `last_request_at` = '2010-09-10 02:23:48' WHERE `id` = 14[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mTask Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+  [4;36;1mTask Load (1.3ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.`id` = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE `tasks` SET `started` = NULL, `updated_at` = '2010-09-10 02:23:48' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 128ms (DB: 9) | 302 Found [http://localhost/tasks/4/stop]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TasksController#index (for 127.0.0.1 at 2010-09-09 19:23:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"tasks"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '14') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-10 02:23:48', `perishable_token` = 'Nn7R8RslNTzawXqF5U8', `last_request_at` = '2010-09-10 02:23:48' WHERE `id` = 14[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering tasks/index
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM `tasks` WHERE (`tasks`.user_id = 14) [0m
+  [4;35;1mTask Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `tasks`[0m
+Completed in 48ms (View: 7, DB: 6) | 200 OK [http://localhost/]

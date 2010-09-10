@@ -15,7 +15,7 @@
   %div.header
    %h1
     = link_to SITE_NAME, root_path, :class => "home_link"
-  - if current_user
+  - if current_user && !current_user.temp
    .user_info
     - if response.request.path == "/users/#{current_user.id}/edit"
      = current_user.login

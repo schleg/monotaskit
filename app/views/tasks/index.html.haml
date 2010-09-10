@@ -6,13 +6,17 @@
  - @tasks.each do |task|
   %li.task
    .control{:style=>"float: left; position: relative; top: .5em; padding: 0 .5em 0 .5em"}
-    %a{:href=>"#",:class=>"start_button"} Start
+    - if task.started.nil?
+     = link_to "Start", start_task_path(task), :class=>"start_button"
+    - else
+     = link_to "Stop", stop_task_path(task), :class=>"stop_button"      
    .description{:style=>"float: left; width: 80%; position: relative; top: .5em"}
     = task.description
    .length{:style=>"z-index: 1001; width: 20%; position: absolute; right: 0; text-align: right; padding: .5em .5em .45em 0"}
     #{task.length ||= 0}m
-.bar{:style=>"display:none; width: 100%;background-color:#CCCCCC;height:2em;"}
-%div{:style=>"display:none"}
+   .started{:style=>"color: gray; font-size: 50%; z-index: 1001; width: 20%; position: absolute; right: 0; text-align: right; padding: .5em .5em .45em 0"}
+    = "@" + task.started.to_s unless task.started.nil?
+
 :javascript
 
  var endTime = null;
@@ -22,12 +26,12 @@
  function ticker(){
   var now = new Date();
   var msecs = endTime - now.getTime();
-  var minutes = Math.ceil(msecs / 1000 / 60);
+  var minutes = Math.floor(msecs / 1000 / 60);
   var seconds = Math.ceil(msecs / 1000) % 60;
   if(msecs <= 0){
    msecs = 0;
    window.clearTimeout(timer);
-   timerDisplay.text();
+   timerDisplay.text("0m");
   } else {
    timerDisplay.text(minutes + "m " + seconds + "s");
    timer = window.setTimeout(ticker,1000);
@@ -36,7 +40,6 @@
 
  function startTimer(taskElement){
   var bar = $('.bar');
-  bar.css("display","block");
   taskElement.append(bar);
   timerDisplay = taskElement.children(".length");
   timerDisplay.css("background-color","#CCCCCC");
@@ -45,9 +48,16 @@
   endTime = new Date(startTime.getTime() + (length * 1000 * 60));
   timer = window.setTimeout(ticker,1000);
  }
-
+ var shown;
+ var faded;
  $(document).ready(function(){
-  $(".start_button").click(function(){
-   startTimer($(this).parent().parent());
-  });
+  var runningTaskEm = $(".stop_button").parent().parent();
+  if(runningTaskEm.length > 0){
+   $.each($(".start_button"), function(i,v){
+    var sb = $(".start_button:eq(" + i + ")");
+    sb.parent().html(sb.text());
+   });
+  }
+  startTimer(runningTaskEm);
+  //});
  });

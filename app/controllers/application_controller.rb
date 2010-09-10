@@ -14,6 +14,30 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+
+    # check if we a left-over user session but no record
+    if !User.exists?(session[:temp_user])
+      session[:temp_user] = nil
+    end
+
+    # create a temp user if needed
+    if @current_user.nil? && session[:temp_user].nil?
+      id = SecureRandom.hex(16)
+      pwd = SecureRandom.hex(16)
+      @current_user = User.create(:email => "#{id}@monotaskit.com", :login => id, :password => pwd, :password_confirmation => pwd)
+      session[:temp_user] = @current_user.id
+    end
+
+    if !session[:temp_user].nil? && @current_user.id != session[:temp_user]
+      temp_user = User.find session[:temp_user]
+      temp_user.tasks.each do |task|
+        task.user_id = @current_user.id
+        task.save
+      end
+      session[:temp_user] = nil
+    end
+
+    return @current_user
   end
 
   def require_user

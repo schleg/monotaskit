@@ -10,11 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      @user.roles << Role.find(:first, :conditions => { :title => "member" })
       flash[:notice] = "Registered user \"#{@user.login}\""
-      if current_user
+      if current_user && !current_user.temp
         redirect_to edit_user_path(@user)
       else
-        redirect_back_or_default account_url
+        redirect_back_or_default login_path
       end
     else
       render :action => :new
